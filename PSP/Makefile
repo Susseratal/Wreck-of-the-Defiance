@@ -1,0 +1,20 @@
+TARGET = target
+OBJS = main.o
+
+CFLAGS = 
+CXXFLAGS = $(CFLAGS) -std=c++14 -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+LIBS += -lstdc++
+
+# This is where the PSP stuff goes?
+BUILD_PRX = 1
+PSP_FW_VERSION = 500
+PSP_LARGE_MEMORY = 1
+
+EXTRA_TARGETS = EBOOT.PBP
+PSP_EBOOT_TITLE = Demon Hunter
+# PSP_EBOOT_ICON = ICON0.PNG
+
+PSPSDK=$(shell psp-config --pspsdk-path)
+include $(PSPSDK)/lib/build.mak

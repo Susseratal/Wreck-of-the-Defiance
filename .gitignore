@@ -1,0 +1,10 @@
+*.jpg
+*.swp
+*/*.out
+*/*.jpg
+*/*.PBP
+*/*.swp
+*/*.elf
+*/*.prx
+*/*.SFO
+*/*.o
