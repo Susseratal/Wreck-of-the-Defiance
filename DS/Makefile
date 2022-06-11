@@ -2,11 +2,15 @@
 .SUFFIXES:
 #---------------------------------------------------------------------------------
 
+#---------------------------------------------------------------------------------
 ifeq ($(strip $(DEVKITARM)),)
 $(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>devkitARM")
 endif
+#---------------------------------------------------------------------------------
 
+#---------------------------------------------------------------------------------
 include $(DEVKITARM)/ds_rules
+#---------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
@@ -14,7 +18,8 @@ include $(DEVKITARM)/ds_rules
 # SOURCES is a list of directories containing source code
 # INCLUDES is a list of directories containing extra header files
 #---------------------------------------------------------------------------------
-TARGET		:=	$(shell basename $(CURDIR))
+TARGET		:=	defiance
+# TARGET		:=	$(shell basename $(CURDIR))
 BUILD		:=	build
 SOURCES		:=	gfx source data  
 INCLUDES	:=	include build
