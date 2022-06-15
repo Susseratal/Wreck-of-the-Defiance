@@ -21,8 +21,11 @@ include $(DEVKITARM)/ds_rules
 TARGET		:=	defiance
 # TARGET		:=	$(shell basename $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	gfx source data  
+SOURCES		:=	source
+DATA		:=	data
 INCLUDES	:=	include build
+GRAPHICS	:=	gfx
+MUSIC		:=	audio
 
 #---------------------------------------------------------------------------------
 # options for code generation

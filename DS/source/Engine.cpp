@@ -14,11 +14,11 @@ Engine::Engine()
 {
 }
 
-Engine::~Engine()
+Engine::~Engine() // still don't know what ~Engine is going to be needed for and I think it's stupid
 {
 }
 
-void Engine::InitHardware() // sets video modes and VRAM banks 
+void Engine::initHardware() // sets video modes and VRAM banks 
 {
     videoSetMode(MODE_0_2D);
     videoSetModeSub(MODE_0_2D);
@@ -28,8 +28,9 @@ void Engine::InitHardware() // sets video modes and VRAM banks
     // There is an additional F bank for 
 }
 
-///////////////////////////// Send Help ///////////////////////////////////////////////////
-
+void Engine::Main()
+{
+    initHardware();
     touchPosition touchPos;
 
     oamInit(&oamMain, SpriteMapping_1D_32, false);
@@ -96,36 +97,12 @@ void Engine::InitHardware() // sets video modes and VRAM banks
         oamUpdate(&oamMain); // update the main screen
         oamUpdate(&oamSub); // update the sub screen
     }
-    return 0;
 }
 
+///////////////////////////// Send Help ///////////////////////////////////////////////////
 /*
-   ------ old main -----
-int main(void) {
-	touchPosition touchXY;
 
-	irqSet(IRQ_VBLANK, Vblank);
-
-	consoleDemoInit();
-
-	iprintf("      \nHello world!\n");
- 
-	while(1) {
-	
-		swiWaitForVBlank();
-		scanKeys();
-		int keys = keysDown();
-		if (keys & KEY_START) break;
-
-		touchRead(&touchXY);
-
-		// print at using ansi escape sequence \x1b[line;columnH 
-		iprintf("\x1b[16;0HTouch x = %04X, %04X\n", touchXY.rawx, touchXY.px);
-		iprintf("Touch y = %04X, %04X\n", touchXY.rawy, touchXY.py);		
-	
-	}
-
-	return 0;
 }
+
 */
 ///////////////////////////// Send Help ///////////////////////////////////////////////////

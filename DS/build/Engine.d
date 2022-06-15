@@ -1,5 +1,5 @@
-main.o: \
- C:/Users/Iain/Documents/EmulatedGames/Wreck-of-the-Defiance/DS/source/main.cpp \
+Engine.o: \
+ C:/Users/Iain/Documents/EmulatedGames/Wreck-of-the-Defiance/DS/source/Engine.cpp \
  C:/Users/Iain/Documents/EmulatedGames/Wreck-of-the-Defiance/DS/source/Engine.h \
  C:/devkitPro/libnds/include/nds.h \
  C:/devkitPro/libnds/include/nds/libversion.h \
