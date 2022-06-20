@@ -20,14 +20,26 @@ Engine::~Engine() // still don't know what ~Engine is going to be needed for and
 
 void Engine::initHardware() // sets video modes and VRAM banks 
 {
+    glBegin2D();
     videoSetMode(MODE_0_2D);
     videoSetModeSub(MODE_0_2D);
 
     vramSetBankA(VRAM_A_MAIN_SPRITE); // There are 3 VRAM banks for main screen - A,B,C - here I only use A
     vramSetBankD(VRAM_D_SUB_SPRITE); // There are 3 VRAM banks for sub screen - D,H,I - Here i only use D
-    // There is an additional F bank for 
+    // There is an additional F bank for - why didn't i finish this comment?
 }
 
+void Engine::Main()
+{
+    initHardware();
+
+    while(1)
+    {
+        glBox(2, 10, 10, 2, 101010); // use the 3d rendering core to draw a 2d box
+    }
+}
+
+/*
 void Engine::Main()
 {
     initHardware();
@@ -98,3 +110,4 @@ void Engine::Main()
         oamUpdate(&oamSub); // update the sub screen
     }
 }
+*/
