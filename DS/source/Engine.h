@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <nds.h>
+#include <nds/arm9/videoGL.h>
 
 #include "gl2d.h"
 

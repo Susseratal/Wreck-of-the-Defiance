@@ -32,11 +32,19 @@ void Engine::initHardware() // sets video modes and VRAM banks
 void Engine::Main()
 {
     initHardware();
+    touchPosition touchPos;
+
+    // oamInit(&oamMain, SpriteMapping_1D_32, false);
+    // oamInit(&oamSub, SpriteMapping_1D_32, false);
+
+    glBox(2, 10, 10, 2, 101010); // use the 3d rendering core to draw a 2d box
 
     while(1)
     {
-        glBox(2, 10, 10, 2, 101010); // use the 3d rendering core to draw a 2d box
+        // scan for button inputs or something i guess
+        // while loop
     }
+    glEnd2D();
 }
 
 /*
