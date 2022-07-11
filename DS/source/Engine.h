@@ -14,6 +14,9 @@
 #include <nds/arm9/videoGL.h>
 
 #include "gl2d.h"
+// #include "ndstypes.h"
+#include "Memoryfeedback.h"
+#include "GlobalManager.h"
 
 #ifndef ENGINE_H // if undefined? 
 #define ENGINE_H // def engine

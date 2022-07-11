@@ -10,6 +10,8 @@
 
 #include "Engine.h"
 
+MemoryFeedback Memory;
+
 Engine::Engine()
 {
 }
@@ -20,19 +22,24 @@ Engine::~Engine() // still don't know what ~Engine is going to be needed for and
 
 void Engine::initHardware() // sets video modes and VRAM banks 
 {
-    glBegin2D();
-    videoSetMode(MODE_0_2D);
-    videoSetModeSub(MODE_0_2D);
+    videoSetMode(MODE_5_3D);
+    videoSetModeSub(MODE_5_2D);
 
-    vramSetBankA(VRAM_A_MAIN_SPRITE); // There are 3 VRAM banks for main screen - A,B,C - here I only use A
+    vramSetBankA(VRAM_A_TEXTURE); 
+    vramSetBankB(VRAM_B_TEXTURE); 
+    vramSetBankC(VRAM_C_TEXTURE); 
     vramSetBankD(VRAM_D_SUB_SPRITE); // There are 3 VRAM banks for sub screen - D,H,I - Here i only use D
-    // There is an additional F bank for - why didn't i finish this comment?
+    vramSetBankH(VRAM_H_SUB_BG); 
+    vramSetBankI(VRAM_I_SUB_BG_0x06208000); // H + I makes 256*192 // whatever that means
+    vramSetBankF(VRAM_F_TEX_PALETTE);
+
+    glScreen2D();
 }
 
 void Engine::Main()
 {
     initHardware();
-    touchPosition touchPos;
+    // touchPosition touchPos;
 
     // oamInit(&oamMain, SpriteMapping_1D_32, false);
     // oamInit(&oamSub, SpriteMapping_1D_32, false);
